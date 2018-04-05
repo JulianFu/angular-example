@@ -1,0 +1,45 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+
+
+<!--Github UserPart-->
+<div *ngIf="gitHubUser" class="container">
+
+  <div class="col-lg-4">
+    Username: {{gitHubUser.name}}
+  </div>
+
+  <div class="col-lg-4">
+    Repository URL: {{gitHubUser.repos_url}}
+  </div>
+
+  <div class="col-lg-4">
+    <img src="{{gitHubUser.avatar_url}}">
+  </div>
+
+
+</div>
+
+<div class="container">
+
+
+  <!--part 2 service-->
+
+  <div class="col-lg-6">
+    <label>Please enter gitHub Username</label>
+    <input type="text" id="name" [(ngModel)]="username" name="username">
+  </div>
+
+
+
+  <div class="col-lg-6">
+
+    <button class="btn btn-default" (click)="onButtonGitHubUserClicked()">Check github API</button>
+  </div>
+
+
+</div>
